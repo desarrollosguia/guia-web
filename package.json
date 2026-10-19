@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev --port 3000",
     "build": "astro build",
-    "preview": "astro preview --port 3000",
+    "preview": "astro preview",
     "lint": "eslint . && pnpm lint:tokens && pnpm lint:content && pnpm format:check",
     "lint:tokens": "node scripts/lint-tokens.mjs",
     "lint:content": "node scripts/lint-content.mjs",
@@ -38,7 +38,7 @@
     "@astrojs/check": "0.9.11",
     "@axe-core/playwright": "4.14.0",
     "@eslint/js": "9.39.5",
-    "@playwright/test": "1.64.1",
+    "@playwright/test": "1.63.0",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "eslint": "9.39.5",
