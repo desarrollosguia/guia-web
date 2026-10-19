@@ -21,7 +21,6 @@
     "test:e2e": "playwright test",
     "tokens:build": "node scripts/build-tokens.mjs",
     "figma:inspect": "node scripts/figma/inspect-node.mjs",
-    "figma:tokens": "node scripts/figma/export-tokens.mjs && node scripts/build-tokens.mjs",
     "prepare": "git config core.hooksPath .githooks",
     "check": "pnpm lint && pnpm typecheck && pnpm test"
   },

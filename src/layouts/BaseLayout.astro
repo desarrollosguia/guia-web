@@ -31,11 +31,13 @@ const canonical = absolute(routePath(route, locale));
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {
-      alternates(route).map((alternate) => (
-        <link rel="alternate" hreflang={HTML_LANG[alternate.locale]} href={absolute(alternate.path)} />
-      ))
-    }
+    {alternates(route).map((alternate) => (
+      <link
+        rel="alternate"
+        hreflang={HTML_LANG[alternate.locale]}
+        href={absolute(alternate.path)}
+      />
+    ))}
     <link rel="alternate" hreflang="x-default" href={absolute(routePath(route, "es"))} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
