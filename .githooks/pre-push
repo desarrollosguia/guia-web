@@ -1,0 +1,11 @@
+#!/bin/sh
+# main se actualiza solo con pull requests.
+while read -r _local_ref _local_sha remote_ref _remote_sha; do
+  case "$remote_ref" in
+    refs/heads/main)
+      echo "No se permite pushear directo a main. Abrí un pull request." >&2
+      exit 1
+      ;;
+  esac
+done
+exit 0
