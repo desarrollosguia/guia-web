@@ -11,3 +11,4 @@
 | BL-07 | DMARC de `p=none` a `p=reject` cuando los mails salientes tengan DKIM propio                     |
 | BL-08 | Dominio verificado en la organización de GitHub                                                  |
 | BL-09 | Descripciones de tokens de Figma: modos claro y oscuro, si corresponde                           |
+| BL-10 | Imagen Open Graph para compartir el link                                                         |

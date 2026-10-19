@@ -5,7 +5,3 @@ pnpm-lock.yaml
 src/styles/tokens.css
 playwright-report
 test-results
-.local
-CLAUDE.md
-AGENTS.md
-.claude
