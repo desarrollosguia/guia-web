@@ -21,7 +21,7 @@ public/         _headers, robots.txt, favicon
 
 ## 3. Tokens
 
-Fuente: variables de Figma. Hasta que exista el archivo, `design/tokens.local.json` con valores provisorios marcados como tales. `scripts/build-tokens.mjs` genera los estilos de `src/styles/` y `scripts/lint-tokens.mjs` rechaza colores literales, valores arbitrarios de Tailwind y la marca escrita a mano fuera de `SITE_NAME`.
+Fuente: variables de Figma («Color oscuro», «Color claro» y «Base»). `design/tokens.local.json` guarda los valores exportados el 20/10 (colores de los dos temas, tipografías, radios, tamaños de tecla, movimiento, foco y énfasis) hasta que exista una exportación automática (BL-09). Los colores se emiten como variables de CSS por tema (`prefers-color-scheme` y `data-theme`) y se consumen por nombre desde Tailwind. `scripts/build-tokens.mjs` genera los estilos de `src/styles/` y `scripts/lint-tokens.mjs` rechaza colores literales, valores arbitrarios de Tailwind y la marca escrita a mano fuera de `SITE_NAME`.
 
 La dirección visual, el sistema de diseño y la estructura de la v1 están en `docs/design-brief.md`.
 

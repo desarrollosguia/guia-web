@@ -12,7 +12,6 @@
 | BL-09 | Variables de Figma: colecciones de color oscuro y claro con nombres idénticos (el plan gratis no tiene modos de variables) |
 | BL-10 | Imagen Open Graph para compartir el link                                                                                   |
 
-| BL-12 | Adaptar `scripts/build-tokens.mjs` y `design/tokens.local.json` a la paleta, las tipografías y los tokens de `docs/design-brief.md` (secciones 3 y 4) |
 | BL-13 | Scripts de tema inicial y de tecla activa por scroll, servidos desde `public/` |
 | BL-14 | Efectos de scroll con animaciones de CSS, transición de vista de los casos y su versión con movimiento reducido |
 | BL-15 | Landing con secciones (servicios, proyectos, cómo trabajamos, nosotros y contacto), páginas de caso, privacidad y 404 |
