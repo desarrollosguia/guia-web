@@ -47,7 +47,7 @@ export function HomePage({ locale, images }: HomePageProps) {
         className="flex flex-col gap-6 pt-24 lg:gap-8 lg:pt-40"
       >
         <SectionHeader id={`${projectsId}-title`} title={t.projects.title} />
-        <div>
+        <div className="flex flex-col gap-6 lg:gap-8">
           {PROJECTS.map((project) => (
             <ProjectRow
               key={project.id}

@@ -24,7 +24,7 @@ export function ProjectRow({ id, name, href, viewLabel, image }: ProjectRowProps
       className="flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:gap-12 lg:py-10"
     >
       <div className="flex flex-col items-start gap-5 lg:w-column">
-        <h3 id={titleId} className="type-title text-content text-balance">
+        <h3 id={titleId} className="type-title text-content">
           {name}
         </h3>
         {href && (
