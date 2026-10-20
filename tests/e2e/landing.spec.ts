@@ -22,6 +22,12 @@ for (const { path, lang, other } of PAGES) {
       expect(alternates).toEqual(["es-AR", "en-US", "x-default"]);
     });
 
+    test("lists the WhatsApp and LinkedIn links of both founders", async ({ page }) => {
+      await page.goto(path);
+      await expect(page.locator('a[href^="https://wa.me/"]')).toHaveCount(2);
+      await expect(page.locator('a[href^="https://www.linkedin.com/in/"]')).toHaveCount(2);
+    });
+
     test("switches language", async ({ page }) => {
       await page.goto(path);
       await page.locator(`nav a[href="${other}"]`).click();

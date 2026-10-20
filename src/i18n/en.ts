@@ -15,5 +15,5 @@ export const en: Dictionary = {
     idea: "F and J are the keyboard's home keys: where everything starts.",
     keysLabel: "Keys F and J",
   },
-  contact: { cta: "Get in touch", github: "GitHub" },
+  contact: { cta: "Get in touch", github: "GitHub", title: "Contact" },
 };

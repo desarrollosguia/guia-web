@@ -15,5 +15,5 @@ export const es: Dictionary = {
     idea: "La F y la J son las teclas guía del teclado: el punto de partida.",
     keysLabel: "Teclas F y J",
   },
-  contact: { cta: "Escribinos", github: "GitHub" },
+  contact: { cta: "Escribinos", github: "GitHub", title: "Contacto" },
 };

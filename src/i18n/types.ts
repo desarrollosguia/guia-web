@@ -3,5 +3,5 @@ export interface Dictionary {
   header: { homeLabel: string; languageLabel: string };
   hero: { title: string; lead: string };
   brand: { idea: string; keysLabel: string };
-  contact: { cta: string; github: string };
+  contact: { cta: string; github: string; title: string };
 }
