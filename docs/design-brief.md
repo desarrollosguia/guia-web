@@ -55,7 +55,7 @@ La idea no se dibuja: **se usa**. Las teclas son la interfaz (la navegación, lo
 
 Reglas de uso:
 
-1. **La tecla es el componente base de lo interactivo.** La navegación es una fila de teclas, los botones son teclas y los selectores de idioma y de tema también. Una tecla tiene relieve (un canto inferior duro) y se hunde al presionarse. La página o la sección activa se ve como tecla presionada.
+1. **La tecla es el componente base de lo interactivo.** La navegación es una fila de teclas, los botones son teclas y los selectores de idioma y de tema también. Una tecla tiene relieve (un canto inferior duro) y se hunde solo mientras se aprieta. La página, la sección o la opción activa se ve como **tecla en reposo con una línea corta bajo la etiqueta**: así queda alineada con las demás y no depende de un desplazamiento mínimo.
 2. **La barra de relieve** es la firma de la marca, no un indicador de estado. Aparece bajo el logo y en la primera y la cuarta tecla de la fila de navegación (como la F y la J, separadas por la G y la H). «Activo» se muestra solo con la tecla presionada. Mide 36 x 4 px en el logo y una proporción 7:1 en las teclas, con radio completo y color `accent`.
 3. **Las teclas F y J aparecen como letras solo en el pie**, dentro de la frase de la idea de marca. No hay teclados dibujados, teclas gigantes ni letras sueltas como decoración.
 4. **Logo:** el wordmark «Guia» con la barra de relieve debajo. El isotipo, para favicon y avatares, es una tecla con la «G» y la barra. Las teclas F y J juntas no forman parte del logo.
@@ -111,6 +111,7 @@ Los portfolios propios son la referencia de gusto por su sobriedad: base neutra,
 
 El sitio tiene dos temas, claro y oscuro. Arranca según la preferencia del sistema operativo y un selector permite cambiarlo; la elección se recuerda en el navegador. Los dos temas usan **los mismos nombres de token**: solo cambian los valores.
 
+- El selector tiene dos opciones, claro y oscuro. La que corresponde a la preferencia del sistema operativo arranca seleccionada; elegir la otra la reemplaza y se recuerda. No hay opción «sistema».
 - Sin JavaScript queda el tema del sistema y el selector no se muestra.
 - La elección se guarda en `localStorage` y se aplica como `data-theme` en `<html>` antes del primer render, con un script de pocas líneas servido desde el propio dominio (la política de seguridad de contenido solo admite scripts propios).
 - `color-scheme` se declara en cada tema, y el `<meta name="theme-color">` se define para ambos.
@@ -246,14 +247,15 @@ Las imágenes y capturas no tienen radio. Se retira `radius-lg`.
 
 La tecla es el componente base de lo interactivo. Se arma con una superficie, un borde y un canto inferior duro; no usa sombras difusas.
 
-| Propiedad        | Valor                                                                     |
-| ---------------- | ------------------------------------------------------------------------- |
-| Superficie       | `surface` (o `inverse` en el botón principal)                             |
-| Borde            | 1 px `border-strong`                                                      |
-| Radio            | `radius-md`                                                               |
-| Canto inferior   | `shadow-key`: `0 6px 0 var(--color-key-edge)`                             |
-| Presionada       | `shadow-key-pressed`: `0 2px 0 var(--color-key-edge)` y `translateY(4px)` |
-| Barra de relieve | Opcional, centrada bajo la etiqueta (ver 1.5)                             |
+| Propiedad        | Valor                                                                                                                                                                                                           |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Superficie       | `surface` (o `inverse` en el botón principal)                                                                                                                                                                   |
+| Borde            | 1 px `border-strong`                                                                                                                                                                                            |
+| Radio            | `radius-md`                                                                                                                                                                                                     |
+| Canto inferior   | `shadow-key`: `0 6px 0 var(--color-key-edge)`                                                                                                                                                                   |
+| Presionada       | `shadow-key-pressed`: `0 2px 0 var(--color-key-edge)` y `translateY(4px)`                                                                                                                                       |
+| Seleccionada     | Reposo (sin desplazamiento) y una línea de 2 px del color del texto, de 16 px de ancho, centrada bajo la etiqueta o el ícono (3 px y 24 px en `lg`). La barra de relieve no se muestra en la tecla seleccionada |
+| Barra de relieve | Opcional, centrada bajo la etiqueta (ver 1.5)                                                                                                                                                                   |
 
 Tamaños (alto): `lg` 104 px (navegación en el hero, 2 x 2 en móvil), `md` 60 px (botones principales), `sm` 48 px (botón «Ver caso» y compactos) y `xs` 40 px (letras F y J dentro de la frase del pie). Todo elemento interactivo mide al menos 44 px de alto; las teclas `xs` son decorativas.
 
@@ -448,14 +450,14 @@ Cada componente existe en ambos temas y a 390 y 1440 px. Estados comunes a todo 
 
 | Componente                      | Variantes                                                                                       | Estados y notas                                                                                                                                                            |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tecla                           | `lg`, `md`, `sm`, `xs`; tono `surface` o `inverse`; con y sin barra de relieve; con y sin ícono | Presionada baja 4 px. Deshabilitada sin canto. Es la base de botones y teclas                                                                                              |
+| Tecla                           | `lg`, `md`, `sm`, `xs`; tono `surface` o `inverse`; con y sin barra de relieve; con y sin ícono | Presionada baja 4 px solo al apretar; seleccionada lleva una línea bajo la etiqueta. Deshabilitada sin canto. Es la base de botones y teclas                               |
 | Botón                           | Principal (`inverse`) y secundario (`surface`), tamaños `md` y `sm`                             | Una tecla con texto. Un solo principal por pantalla                                                                                                                        |
-| Fila de teclas (navegación)     | Grande en el hero, compacta en el encabezado, 2 x 2 en móvil                                    | Tecla activa con `aria-current="true"`; barra de relieve en la 1ª y la 4ª                                                                                                  |
+| Fila de teclas (navegación)     | Grande en el hero, compacta en el encabezado, 2 x 2 en móvil                                    | Tecla activa con `aria-current="true"` y línea bajo la etiqueta; barra de relieve en la 1ª y la 4ª cuando no están seleccionadas                                           |
 | Encabezado                      | De arriba (logo, idioma y tema), compacto con scroll, móvil con menú cerrado y abierto          | El compacto aparece con el scroll (efecto 1)                                                                                                                               |
 | Logo                            | Wordmark con barra y isotipo (tecla con la G); tamaños `md` y `lg`                              | Con enlace al inicio en el encabezado y el pie                                                                                                                             |
 | Énfasis ondulado                | Frase con subrayado ondulado                                                                    | Decorativo: no es un enlace. Se marca con `<em>`                                                                                                                           |
-| Selector de idioma              | ES y EN, dos teclas                                                                             | Actual presionada con `aria-current`; cada opción con su `lang`                                                                                                            |
-| Selector de tema                | Sistema, claro y oscuro                                                                         | Teclas con `aria-pressed`; oculto sin JavaScript                                                                                                                           |
+| Selector de idioma              | ES y EN, dos teclas                                                                             | Actual seleccionada con línea y `aria-current`; cada opción con su `lang`                                                                                                  |
+| Selector de tema                | Claro y oscuro (dos teclas con ícono)                                                           | Teclas con `aria-pressed`; la seleccionada lleva la línea bajo el ícono; oculto sin JavaScript                                                                             |
 | Menú móvil                      | Cerrado, abierto                                                                                | Foco atrapado al abrir, `Esc` cierra, devuelve el foco                                                                                                                     |
 | Servicio (fila)                 | Escritorio y móvil, cerrado y abierto                                                           | Número, nombre, una línea y tecla «Qué incluye» (pasa a «Ocultar» al abrirse); tres ítems abiertos. Botón con `aria-expanded` y regleta                                    |
 | Fila de proyecto                | Con imagen                                                                                      | Nombre, línea, tecla «Ver caso» e imagen. La imagen participa de la transición de vista                                                                                    |
