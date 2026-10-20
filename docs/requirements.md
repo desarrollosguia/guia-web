@@ -33,7 +33,7 @@ Sitio institucional de Guia, estudio de soluciones digitales (páginas web, apli
 | Elemento            | Castellano                                                                 | English                                                                |
 | ------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | Marca               | Guia                                                                       | Guia                                                                   |
-| Título de página    | Soluciones digitales a medida                                              | Custom digital solutions                                               |
+| Título de pestaña   | Guia \| Webs, aplicaciones, bots y sistemas a medida                       | Guia \| Custom websites, apps, bots and systems                        |
 | Titular             | De la idea a un sistema funcional                                          | From idea to a working system                                          |
 | Bajada              | Diseñamos y desarrollamos a tu medida. Contanos qué necesitás.             | We design and build to fit you. Tell us what you need.                 |
 | Llamados            | Escribinos, Nuestros proyectos                                             | Get in touch, Our projects                                             |
