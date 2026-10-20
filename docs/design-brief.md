@@ -52,10 +52,10 @@ La F y la J son las teclas guía del teclado: tienen relieve y de ahí parten lo
 
 Reglas de uso:
 
-1. **Historia principal:** teclas guía, relieve, punto de partida. Las iniciales no aparecen en el hero ni en el titular.
-2. **Las dos teclas completas** solo aparecen en el hero y como isotipo (una tecla). La sección de idea de marca se resuelve con tipografía y barra de relieve.
+1. **Historia principal:** teclas guía, relieve, punto de partida. Las teclas no son la cara de la marca: son un guiño discreto para quien se detiene a mirar. Las iniciales no aparecen en el hero ni en el titular.
+2. **Las teclas F y J solo como guiño**, en tamaño chico (32 px) y en lugares poco visibles: la sección de idea de marca y el pie. No aparecen en el hero ni en tarjetas, y no hay teclas grandes. El hero es tipográfico.
 3. **La barra de relieve** (la marca que tienen las teclas F y J) es el signo gráfico recurrente: marcador de sección, subrayado del enlace activo y anillo de foco. Mide 32 px de ancho por 4 px de alto, con radio completo, en el color de acento.
-4. **Isotipo:** una tecla con la barra de relieve, sin letra. Se lee como «guía» sin depender de las iniciales y evita las dos letras juntas.
+4. **Logo:** el wordmark «Guia» con la barra de relieve debajo. El isotipo, para favicon y avatares, es una tecla con la «G» y la barra. Las teclas F y J juntas no forman parte del logo.
 5. **Wordmark:** «Guia» en la sans de títulos, peso 600, tracking `-0.03em`. Siempre «Guia», sin tilde, y con inicial mayúscula dentro de un texto.
 6. **Inglés:** se explica «home keys» en una frase cercana, porque el término es menos conocido. La marca y los nombres de las teclas no se traducen.
 7. **Prohibido:** teclados completos, cursores parpadeantes, código decorativo y letras sueltas como relleno.
@@ -260,15 +260,15 @@ La sombra «tecla» es el único recurso de elevación: un borde superior claro,
 - Sin soporte (Firefox estable todavía no lo trae por defecto) o con movimiento reducido, todo se ve en su estado final y sin animar. El diseño estático es la versión completa del sitio.
 - Ninguna animación transmite información que no esté también en el texto.
 
-**Efectos de scroll de la v1** (el diseño muestra el estado inicial y el final; el movimiento se describe acá)
+**Efectos de scroll de la v1** (el diseño muestra tres estados por efecto, entrada, mitad y salida; el movimiento se describe acá)
 
-| #   | Elemento                                     | Propiedad                                                           | Línea de tiempo y rango                                                  | Reducido o sin soporte       |
-| --- | -------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------- |
-| 1   | Encabezado                                   | Aparece el borde inferior (`opacity` 0 a 1)                         | `scroll(root)`, de 0 a 64 px                                             | Borde siempre visible        |
-| 2   | Bloques de sección (título, tarjetas, pasos) | `opacity` 0 a 1 y `translateY` 24 px a 0                            | `view()`, `entry 0%` a `entry 35%`, escalonado por posición en la grilla | Visibles, sin desplazamiento |
-| 3   | Teclas F y J del hero                        | `translateY` 0 a -32 px y `scale` 1 a 0.96 al salir de pantalla     | `view()`, `exit 0%` a `exit 100%`                                        | Fijas                        |
-| 4   | Línea de «Cómo trabajamos»                   | La barra de relieve avanza (`scaleY` 0 a 1) a lo largo de los pasos | `view()` sobre la lista, `contain 0%` a `contain 100%`                   | Barra completa               |
-| 5   | Pasos de «Cómo trabajamos»                   | El paso activo pasa de `content-muted` a `content`                  | `view()`, `cover 40%` a `cover 60%`                                      | Todos en `content`           |
+| #   | Elemento                                                                  | Propiedad                                                           | Línea de tiempo y rango                                                  | Reducido o sin soporte       |
+| --- | ------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------- |
+| 1   | Encabezado                                                                | Aparece el borde inferior (`opacity` 0 a 1)                         | `scroll(root)`, de 0 a 64 px                                             | Borde siempre visible        |
+| 2   | Filas y tarjetas de sección (el título queda fijo con `position: sticky`) | `opacity` 0 a 1 y `translateY` 24 px a 0                            | `view()`, `entry 0%` a `entry 35%`, escalonado por posición en la grilla | Visibles, sin desplazamiento |
+| 3   | Titular del hero                                                          | `translateY` 0 a -48 px y `opacity` 1 a 0 al salir de pantalla      | `view()`, `exit 0%` a `exit 100%`                                        | Fijo                         |
+| 4   | Línea de «Cómo trabajamos»                                                | La barra de relieve avanza (`scaleY` 0 a 1) a lo largo de los pasos | `view()` sobre la lista, `contain 0%` a `contain 100%`                   | Barra completa               |
+| 5   | Pasos de «Cómo trabajamos»                                                | El paso activo pasa de `content-muted` a `content`                  | `view()`, `cover 40%` a `cover 60%`                                      | Todos en `content`           |
 
 **Microinteracciones** (transiciones, no scroll)
 
@@ -370,14 +370,14 @@ Estado de los textos: **vigente** es el texto de `docs/requirements.md`; **propu
 
 **Inicio**
 
-| #   | Sección              | Objetivo                               | Contenido, de mayor a menor jerarquía                                                | Castellano | English             |
-| --- | -------------------- | -------------------------------------- | ------------------------------------------------------------------------------------ | ---------- | ------------------- |
-| 1   | Hero                 | Decir qué hacemos y empujar a escribir | Titular (`display`), bajada (`lead`), llamado principal, teclas F y J                | Vigente    | Vigente             |
-| 2   | Servicios            | Mostrar la oferta en una mirada        | Título, cuatro tarjetas (nombre, una línea, enlace a la ancla), enlace a Servicios   | Propuesta  | Proposal            |
-| 3   | Proyectos destacados | Dar prueba                             | Título, tres a cuatro casos (captura, nombre, una línea), enlace a Proyectos         | Propuesta  | Proposal            |
-| 4   | Cómo trabajamos      | Bajar la incertidumbre                 | Título, cuatro pasos en una línea, enlace a la página                                | Propuesta  | Proposal            |
-| 5   | Idea de marca        | Explicar el nombre                     | La barra de relieve, la frase de la idea y, en inglés, una aclaración de «home keys» | Vigente    | Vigente y propuesta |
-| 6   | Contacto             | Convertir                              | Título, llamado, mail, WhatsApp y LinkedIn de cada socio                             | Vigente    | Vigente             |
+| #   | Sección              | Objetivo                               | Contenido, de mayor a menor jerarquía                                                                                      | Castellano | English             |
+| --- | -------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------- |
+| 1   | Hero                 | Decir qué hacemos y empujar a escribir | Titular (`display`), bajada (`lead`), llamado principal y secundario                                                       | Vigente    | Vigente             |
+| 2   | Servicios            | Mostrar la oferta en una mirada        | Título fijo y cuatro filas (número, nombre y una línea), enlace a Servicios                                                | Propuesta  | Proposal            |
+| 3   | Proyectos destacados | Dar prueba                             | Título, tres a cuatro casos (captura, nombre, una línea), enlace a Proyectos                                               | Propuesta  | Proposal            |
+| 4   | Cómo trabajamos      | Bajar la incertidumbre                 | Título, cuatro pasos en una línea, enlace a la página                                                                      | Propuesta  | Proposal            |
+| 5   | Idea de marca        | Explicar el nombre                     | La barra de relieve, la frase de la idea, el guiño de las teclas F y J (chico) y, en inglés, una aclaración de «home keys» | Vigente    | Vigente y propuesta |
+| 6   | Contacto             | Convertir                              | Título, llamado, mail, WhatsApp y LinkedIn de cada socio                                                                   | Vigente    | Vigente             |
 
 **Servicios.** Objetivo: que el visitante reconozca su problema. Una sección por servicio (páginas web, aplicaciones, bots, sistemas a medida), con ancla propia: qué resolvemos, para quién, qué se entrega y un llamado a contar el proyecto. Cierre con llamado a contactar.
 
@@ -407,7 +407,9 @@ Cada componente existe en ambos temas y a 390 y 1440 px. Estados comunes a todo 
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | Botón                           | Primario (tecla, `accent`), secundario (borde `border-strong`), texto; tamaños `md` (44 px) y `lg` (52 px); con y sin ícono | Presionado baja 4 px. Deshabilitado sin sombra                             |
 | Enlace                          | En texto (subrayado), de navegación (con barra de relieve)                                                                  | Activo con `aria-current="page"`                                           |
-| Tecla                           | Letra F, letra J, sin letra (isotipo); tamaños 112 px y 160 px                                                              | Reposo, presionada. Decorativa: `role="img"` con etiqueta                  |
+| Guiño de tecla                  | Letra F, letra J; 32 px                                                                                                     | Decorativo (`aria-hidden`). Solo en idea de marca y pie                    |
+| Logo                            | Wordmark con barra, isotipo (tecla con la G); tamaños `md` y `lg`                                                           | Con enlace al inicio en el encabezado y el pie                             |
+| Fila de servicio                | Reposo, hover                                                                                                               | Número, nombre y una línea, con divisor; en hover el divisor pasa a acento |
 | Barra de relieve                | Horizontal 32 x 4 px, vertical (línea de proceso)                                                                           | Estática o avanzando con el scroll                                         |
 | Encabezado                      | Escritorio, móvil con menú cerrado, móvil con menú abierto                                                                  | Con y sin borde inferior (efecto 1)                                        |
 | Selector de idioma              | ES y EN                                                                                                                     | Actual con `aria-current`; cada opción con su `lang`                       |
