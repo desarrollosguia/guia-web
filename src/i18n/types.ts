@@ -10,6 +10,9 @@ export interface Dictionary {
     themeSystem: string;
     themeLight: string;
     themeDark: string;
+    menuOpen: string;
+    menuClose: string;
+    menuLabel: string;
   };
   hero: { title: string; lead: string; contact: string; projects: string };
   projects: {

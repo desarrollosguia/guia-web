@@ -32,9 +32,9 @@
   if (initial !== "system") root.dataset.theme = initial;
 
   document.addEventListener("DOMContentLoaded", function () {
-    var wrapper = document.querySelector("[data-theme-switch]");
-    if (!wrapper) return;
-    var buttons = wrapper.querySelectorAll("[data-theme-value]");
+    var wrappers = document.querySelectorAll("[data-theme-switch]");
+    var buttons = document.querySelectorAll("[data-theme-value]");
+    if (wrappers.length === 0) return;
 
     function mark() {
       var current = root.dataset.theme || "system";
@@ -49,7 +49,9 @@
         mark();
       });
     });
-    wrapper.hidden = false;
+    wrappers.forEach(function (wrapper) {
+      wrapper.hidden = false;
+    });
     mark();
   });
 })();

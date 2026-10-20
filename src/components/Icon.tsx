@@ -14,6 +14,8 @@ const ICONS = {
       <path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
     </>
   ),
+  menu: <path d="M4 12h16M4 6h16M4 18h16" />,
+  close: <path d="M18 6 6 18M6 6l12 12" />,
   moon: <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />,
   whatsapp: <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />,
   linkedin: (

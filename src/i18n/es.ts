@@ -13,6 +13,9 @@ export const es: Dictionary = {
     themeLabel: "Tema",
     themeSystem: "Tema del sistema",
     themeLight: "Claro",
+    menuOpen: "Abrir menú",
+    menuClose: "Cerrar menú",
+    menuLabel: "Menú",
     themeDark: "Oscuro",
   },
   hero: {

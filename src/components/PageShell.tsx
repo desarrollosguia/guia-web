@@ -23,7 +23,13 @@ export function PageShell({ locale, route, children }: PageShellProps) {
   return (
     <div className="bg-canvas text-content font-sans flex min-h-screen flex-col px-5">
       <SkipLink label={t.skipLink} />
-      <Header text={t.header} locale={locale} homePath={routePath("home", locale)} paths={paths} />
+      <Header
+        text={t.header}
+        sections={{ projects: t.projects.title, contact: t.contact.title }}
+        locale={locale}
+        homePath={routePath("home", locale)}
+        paths={paths}
+      />
       <main id="main" className="mx-auto flex w-full max-w-page flex-1 flex-col">
         {children}
       </main>

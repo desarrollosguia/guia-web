@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { ALL_PAGES, HOME_PAGES, NOT_FOUND_PAGES, THEMES } from "./pages";
+import { ALL_PAGES, HOME_PAGES, NOT_FOUND_PAGES, THEMES, openMenuOnMobile } from "./pages";
 
 const PREDICTOR_URL = "https://wc-match-predictor-frontend.vercel.app/";
 
@@ -14,7 +14,8 @@ for (const { path, lang, other } of ALL_PAGES) {
 
     test("switches language", async ({ page }) => {
       await page.goto(path);
-      await page.locator(`nav a[href="${other}"]`).click();
+      await openMenuOnMobile(page);
+      await page.locator(`nav a[href="${other}"]:visible`).click();
       await expect(page).toHaveURL(other);
     });
 
