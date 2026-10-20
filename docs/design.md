@@ -31,7 +31,7 @@ Diccionarios `src/i18n/es.ts` y `src/i18n/en.ts` con el mismo tipo, así a una t
 
 ## 5. v0
 
-Pantalla única sobre fondo oscuro, tipografía Inter autoalojada, las teclas F y J dibujadas en CSS como isotipo provisorio. Sin fotos y sin JavaScript.
+Pantalla única sobre fondo oscuro, tipografía Inter autoalojada (reemplazada por Instrument Serif y Geist en la primera versión), las teclas F y J dibujadas en CSS como isotipo provisorio. Sin fotos y sin JavaScript.
 
 ## 6. Despliegue
 
