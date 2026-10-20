@@ -1,4 +1,5 @@
 import { HTML_LANG, LOCALES, type Locale } from "@/config/site";
+import { KeyLink } from "./Key";
 
 interface LanguageSwitchProps {
   label: string;
@@ -9,18 +10,19 @@ interface LanguageSwitchProps {
 export function LanguageSwitch({ label, current, paths }: LanguageSwitchProps) {
   return (
     <nav aria-label={label}>
-      <ul className="flex gap-1">
+      <ul className="flex gap-2">
         {LOCALES.map((locale) => (
           <li key={locale}>
-            <a
+            <KeyLink
+              size="sm"
               href={paths[locale]}
               lang={HTML_LANG[locale]}
               hrefLang={HTML_LANG[locale]}
               aria-current={locale === current ? "page" : undefined}
-              className="type-label text-content-muted aria-[current=page]:bg-surface-raised aria-[current=page]:text-content hover:text-content rounded-full px-3 py-2 uppercase"
+              className="uppercase"
             >
               {locale}
-            </a>
+            </KeyLink>
           </li>
         ))}
       </ul>

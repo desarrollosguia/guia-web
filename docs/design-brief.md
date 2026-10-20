@@ -101,7 +101,7 @@ Los portfolios propios son la referencia de gusto por su sobriedad: base neutra,
 
 ### 2.4 Fotografía e imágenes
 
-- **Retratos** (las fotos de los portfolios): relación 4:5, recorte al mismo encuadre, tratamiento monocromo con el mismo contraste, sobre un fondo neutro (si el original no lo tiene, se recorta sobre `surface-raised`). Mínimo 800 px de ancho. Si una foto no cumple, se reemplaza antes de publicar.
+- **Retratos:** por ahora, las fotos de la entrega de diplomas de los dos socios (mismo evento y misma luz), relación 4:5, recorte al mismo encuadre y tratamiento monocromo con el mismo contraste. Se evita el cartel de la universidad en lo posible. Son provisorias: se reemplazan por un retrato conjunto sobre fondo neutro cuando esté disponible. Mínimo 800 px de ancho.
 - **Capturas de proyectos:** relación 16:10, sin marco ni radio y sin mockups de dispositivos. Son capturas reales del producto o de su diseño.
 - **Formatos:** AVIF y WebP generados en el build con anchos 480, 960 y 1440, `loading="lazy"` salvo la imagen del LCP, y siempre con `width`, `height` y `alt`.
 

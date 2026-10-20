@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LOCALES, ROUTES } from "@/config/site";
+import { LOCALES, PROJECTS, ROUTES } from "@/config/site";
 import { alternates, getDictionary, routePath } from "@/i18n";
 
 const collectStrings = (value: unknown): string[] =>
@@ -41,5 +41,27 @@ describe("routes", () => {
       const found = alternates(route as keyof typeof ROUTES).map(({ locale }) => locale);
       expect(found).toEqual([...LOCALES]);
     });
+  });
+});
+
+describe("project config", () => {
+  it("shows a project without link when href is missing", () => {
+    const withoutLink = PROJECTS.filter((project) => !("href" in project));
+    expect(withoutLink.map((project) => project.id)).toEqual(["audenpass"]);
+  });
+
+  it.each(PROJECTS)("$id has a name and an image description in every language", ({ id }) => {
+    LOCALES.forEach((locale) => {
+      const item = getDictionary(locale).projects.items[id];
+      expect(item.name.length).toBeGreaterThan(0);
+      expect(item.imageAlt.length).toBeGreaterThan(0);
+    });
+  });
+});
+
+describe("not found routes", () => {
+  it("has one page per language outside the home routes", () => {
+    expect(routePath("notFound", "es")).toBe("/404/");
+    expect(routePath("notFound", "en")).toBe("/en/404/");
   });
 });
