@@ -16,15 +16,18 @@ import {
   type RouteName,
 } from "@/config/site";
 import { alternates, routePath } from "@/i18n";
+import tokens from "../../design/tokens.local.json";
 
 interface Props {
   locale: Locale;
   route: RouteName;
   title: string;
   description: string;
+  /** For pages that must not be indexed: no canonical, no alternates, `noindex`. */
+  noindex?: boolean;
 }
 
-const { locale, route, title, description } = Astro.props;
+const { locale, route, title, description, noindex = false } = Astro.props;
 const pageTitle = `${SITE_NAME} | ${title}`;
 const absolute = (path: string) => new URL(path, SITE_URL).href;
 const canonical = absolute(routePath(route, locale));
@@ -36,20 +39,37 @@ const canonical = absolute(routePath(route, locale));
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    {alternates(route).map((alternate) => (
-      <link
-        rel="alternate"
-        hreflang={HTML_LANG[alternate.locale]}
-        href={absolute(alternate.path)}
-      />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={absolute(routePath(route, "es"))} />
+    <meta
+      name="theme-color"
+      content={tokens.color.dark.canvas}
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content={tokens.color.light.canvas}
+      media="(prefers-color-scheme: light)"
+    />
+    <script is:inline src="/theme.js"></script>
+    {noindex ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonical} />
+        {alternates(route).map((alternate) => (
+          <link
+            rel="alternate"
+            hreflang={HTML_LANG[alternate.locale]}
+            href={absolute(alternate.path)}
+          />
+        ))}
+        <link rel="alternate" hreflang="x-default" href={absolute(routePath(route, "es"))} />
+      </>
+    )}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {!noindex && <meta property="og:url" content={canonical} />}
     <meta property="og:locale" content={OG_LOCALE[locale]} />
     <link rel="preload" href={serifLatin} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={sansLatin} as="font" type="font/woff2" crossorigin />

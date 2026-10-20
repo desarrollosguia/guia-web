@@ -21,7 +21,17 @@
   --spacing-key-md: 3.75rem;
   --spacing-key-sm: 3rem;
   --spacing-key-xs: 2.5rem;
+  --spacing-bar-lg: 1.75rem;
+  --spacing-bar-md: 2rem;
+  --spacing-bar-sm: 1.125rem;
+  --spacing-bar-xs: 0.75rem;
+  --spacing-bar-thick-lg: 0.25rem;
+  --spacing-bar-thick-sm: 0.1875rem;
+  --spacing-bar-thick-xs: 0.125rem;
   --container-page: 75rem;
+  --container-display: 68.75rem;
+  --container-lead: 40rem;
+  --container-column: 32.5rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
@@ -215,4 +225,12 @@
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0;
+}
+
+@utility type-wordmark {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3125;
+  letter-spacing: -0.03em;
 }

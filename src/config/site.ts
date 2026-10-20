@@ -33,8 +33,27 @@ export const DEFAULT_LOCALE: Locale = "es";
 export const HTML_LANG: Record<Locale, string> = { es: "es-AR", en: "en-US" };
 export const OG_LOCALE: Record<Locale, string> = { es: "es_AR", en: "en_US" };
 
+export interface Project {
+  id: string;
+  /** Optional: a project without a link is shown by name only. */
+  href?: string;
+}
+
+export const PROJECTS = [
+  { id: "audenpass" },
+  { id: "world-cup-predictor", href: "https://wc-match-predictor-frontend.vercel.app/" },
+] as const satisfies readonly Project[];
+
+export type ProjectId = (typeof PROJECTS)[number]["id"];
+
+export const SECTION_IDS = {
+  projects: { es: "proyectos", en: "work" },
+  contact: { es: "contacto", en: "contact" },
+} as const satisfies Record<string, Record<Locale, string>>;
+
 export const ROUTES = {
   home: { es: "/", en: "/en/" },
+  notFound: { es: "/404", en: "/en/404" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteName = keyof typeof ROUTES;

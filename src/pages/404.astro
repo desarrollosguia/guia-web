@@ -1,0 +1,18 @@
+---
+import { NotFoundPage } from "@/components/NotFoundPage";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDictionary } from "@/i18n";
+
+const locale = "es";
+const t = getDictionary(locale);
+---
+
+<BaseLayout
+  locale={locale}
+  route="notFound"
+  title={t.notFound.metaTitle}
+  description={t.meta.description}
+  noindex
+>
+  <NotFoundPage locale={locale} />
+</BaseLayout>

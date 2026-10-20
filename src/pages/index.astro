@@ -1,12 +1,14 @@
 ---
-import { Landing } from "@/components/Landing";
+import { HomePage } from "@/components/HomePage";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/i18n";
+import { getProjectImages } from "@/lib/project-images";
 
 const locale = "es";
 const t = getDictionary(locale);
+const images = await getProjectImages(locale);
 ---
 
 <BaseLayout locale={locale} route="home" title={t.meta.title} description={t.meta.description}>
-  <Landing locale={locale} />
+  <HomePage locale={locale} images={images} />
 </BaseLayout>
