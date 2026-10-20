@@ -1,0 +1,53 @@
+---
+import "@fontsource-variable/inter";
+import "@/styles/global.css";
+import {
+  HTML_LANG,
+  OG_LOCALE,
+  SITE_NAME,
+  SITE_URL,
+  type Locale,
+  type RouteName,
+} from "@/config/site";
+import { alternates, routePath } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+  route: RouteName;
+  title: string;
+  description: string;
+}
+
+const { locale, route, title, description } = Astro.props;
+const pageTitle = `${SITE_NAME} | ${title}`;
+const absolute = (path: string) => new URL(path, SITE_URL).href;
+const canonical = absolute(routePath(route, locale));
+---
+
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates(route).map((alternate) => (
+      <link
+        rel="alternate"
+        hreflang={HTML_LANG[alternate.locale]}
+        href={absolute(alternate.path)}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={absolute(routePath(route, "es"))} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={OG_LOCALE[locale]} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

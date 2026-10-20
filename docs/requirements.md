@@ -29,14 +29,14 @@ Sitio institucional de Guia, estudio de soluciones digitales (páginas web, apli
 
 ## 5. Contenido de la v0
 
-| Elemento | Castellano | English |
-|---|---|---|
-| Marca | Guia | Guia |
-| Título | Soluciones digitales a medida | Custom digital solutions |
-| Bajada | Diseñamos y desarrollamos webs, aplicaciones, bots y sistemas para empresas y emprendedores. | We design and build websites, apps, bots and custom systems for companies and entrepreneurs. |
-| Idea de marca | La F y la J son las teclas guía del teclado: el punto de partida. | F and J are the keyboard's home keys: where everything starts. |
-| Llamado | Escribinos | Get in touch |
-| Pie | © 2026 Guia | © 2026 Guia |
+| Elemento      | Castellano                                                                                   | English                                                                                      |
+| ------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Marca         | Guia                                                                                         | Guia                                                                                         |
+| Título        | Soluciones digitales a medida                                                                | Custom digital solutions                                                                     |
+| Bajada        | Diseñamos y desarrollamos webs, aplicaciones, bots y sistemas para empresas y emprendedores. | We design and build websites, apps, bots and custom systems for companies and entrepreneurs. |
+| Idea de marca | La F y la J son las teclas guía del teclado: el punto de partida.                            | F and J are the keyboard's home keys: where everything starts.                               |
+| Llamado       | Escribinos                                                                                   | Get in touch                                                                                 |
+| Pie           | © 2026 Guia                                                                                  | © 2026 Guia                                                                                  |
 
 Contacto: `hola@desarrollosguia.com`, WhatsApp, LinkedIn y GitHub. **Pendiente:** links de LinkedIn, números de WhatsApp (BL-02).
 
