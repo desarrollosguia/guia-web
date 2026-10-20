@@ -2,7 +2,7 @@ import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
   meta: {
-    title: "Custom digital solutions",
+    title: "Custom websites, apps, bots and systems",
     description:
       "We design and build websites, apps, bots and custom systems for companies and entrepreneurs.",
   },
