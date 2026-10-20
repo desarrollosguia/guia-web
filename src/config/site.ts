@@ -53,7 +53,7 @@ export const SECTION_IDS = {
 
 export const ROUTES = {
   home: { es: "/", en: "/en/" },
-  notFound: { es: "/404", en: "/en/404" },
+  notFound: { es: "/404/", en: "/en/404/" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteName = keyof typeof ROUTES;
