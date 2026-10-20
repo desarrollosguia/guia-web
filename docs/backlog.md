@@ -16,3 +16,4 @@
 | BL-13 | Selector de tema y script de tema inicial servido desde `public/`                                                                                                 |
 | BL-14 | Efectos de scroll con animaciones de CSS y su versión con movimiento reducido                                                                                     |
 | BL-15 | Páginas de la v1: servicios, proyectos y casos, cómo trabajamos, nosotros, contacto, privacidad y 404                                                             |
+| BL-16 | Teclas con función real: atajos de teclado (por ejemplo 1 a 4 para navegar). Evaluar choques con lectores de pantalla y atajos del navegador                      |
