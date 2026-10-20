@@ -23,6 +23,8 @@ public/         _headers, robots.txt, favicon
 
 Fuente: variables de Figma. Hasta que exista el archivo, `design/tokens.local.json` con valores provisorios marcados como tales. `scripts/build-tokens.mjs` genera los estilos de `src/styles/` y `scripts/lint-tokens.mjs` rechaza colores literales, valores arbitrarios de Tailwind y la marca escrita a mano fuera de `SITE_NAME`.
 
+La dirección visual, el sistema de diseño y la estructura de la v1 están en `docs/design-brief.md`.
+
 ## 4. i18n
 
 Diccionarios `src/i18n/es.ts` y `src/i18n/en.ts` con el mismo tipo, así a una traducción no le puede faltar una clave. Castellano por defecto, sin prefijo.
