@@ -38,7 +38,7 @@ Sitio institucional de Guia, estudio de soluciones digitales (páginas web, apli
 | Llamado       | Escribinos                                                                                   | Get in touch                                                                                 |
 | Pie           | © 2026 Guia                                                                                  | © 2026 Guia                                                                                  |
 
-Contacto: `hola@desarrollosguia.com`, WhatsApp, LinkedIn y GitHub. **Pendiente:** links de LinkedIn, números de WhatsApp (BL-02).
+Contacto: `hola@desarrollosguia.com` y GitHub, más una sección «Contacto» / «Contact» con el nombre de cada socio, su WhatsApp y su LinkedIn.
 
 ## 6. Criterios transversales
 

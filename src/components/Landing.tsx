@@ -1,5 +1,6 @@
 import { CONTACT_EMAIL, FOUNDED_YEAR, GITHUB_URL, SITE_NAME, type Locale } from "@/config/site";
 import { alternates, getDictionary } from "@/i18n";
+import { FounderContacts } from "./FounderContacts";
 import { Keycap } from "./Keycap";
 import { LanguageSwitch } from "./LanguageSwitch";
 
@@ -53,6 +54,8 @@ export function Landing({ locale }: LandingProps) {
           </div>
           <p className="type-lead text-content-muted max-w-md text-pretty">{t.brand.idea}</p>
         </section>
+
+        <FounderContacts title={t.contact.title} />
       </main>
 
       <footer className="type-body text-content-muted py-6">
