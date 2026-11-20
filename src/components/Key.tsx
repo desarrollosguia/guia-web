@@ -25,9 +25,6 @@ const BARS: Record<KeySize, string> = {
   xs: "h-bar-thick-xs w-bar-xs",
 };
 
-/** The relief bar gives way to the underline of a selected key (current link or pressed toggle). */
-const BAR_STATE = "key-selected:hidden";
-
 const SELECTED_LABEL: Record<KeySize, string> = {
   lg: "key-selected:underline decoration-content decoration-3 underline-offset-8",
   md: "",
@@ -59,7 +56,7 @@ export function KeyLabel({ size, relief = false, icon = false, children }: KeyLa
     <>
       {icon ? children : <span className={SELECTED_LABEL[size]}>{children}</span>}
       {relief && BARS[size] && (
-        <span aria-hidden="true" className={`bg-accent rounded-full ${BARS[size]} ${BAR_STATE}`} />
+        <span aria-hidden="true" className={`bg-accent rounded-full ${BARS[size]}`} />
       )}
       {icon && <span aria-hidden="true" className={ICON_LINE} />}
     </>
