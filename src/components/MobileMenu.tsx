@@ -2,6 +2,7 @@ import { SECTION_IDS, type Locale } from "@/config/site";
 import type { Dictionary } from "@/i18n/types";
 import { Icon } from "./Icon";
 import { keyClassName, KeyLink } from "./Key";
+import { KeyRow } from "./KeyRow";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { Logo } from "./Logo";
 import { ThemeSwitch } from "./ThemeSwitch";
@@ -10,14 +11,24 @@ const MENU_ID = "menu";
 
 interface MobileMenuProps {
   text: Dictionary["header"];
-  sections: { projects: string; contact: string };
+  nav: Dictionary["nav"];
+  cta: string;
   locale: Locale;
   homePath: string;
+  sectionsBase: string;
   paths: Record<Locale, string>;
 }
 
 /** Opens as a native popover, so it needs no JavaScript to open, close with Esc or return focus. */
-export function MobileMenu({ text, sections, locale, homePath, paths }: MobileMenuProps) {
+export function MobileMenu({
+  text,
+  nav,
+  cta,
+  locale,
+  homePath,
+  sectionsBase,
+  paths,
+}: MobileMenuProps) {
   return (
     <div className="md:hidden">
       <button
@@ -54,20 +65,25 @@ export function MobileMenu({ text, sections, locale, homePath, paths }: MobileMe
             <Icon name="close" className="size-5" />
           </button>
         </div>
-        <nav className="flex flex-col gap-3 px-5 pt-10">
-          <KeyLink size="lg" relief href={`#${SECTION_IDS.projects[locale]}`}>
-            {sections.projects}
-          </KeyLink>
-          <KeyLink size="lg" relief href={`#${SECTION_IDS.contact[locale]}`}>
-            {sections.contact}
-          </KeyLink>
+        <nav aria-label={nav.label} className="px-5 pt-10">
+          <KeyRow layout="menu" locale={locale} labels={nav} base={sectionsBase} />
         </nav>
-        <div className="flex flex-1 items-end justify-between gap-4 px-5 pt-6 pb-10">
-          <LanguageSwitch label={text.languageLabel} current={locale} paths={paths} />
-          <ThemeSwitch
-            label={text.themeLabel}
-            labels={{ system: text.themeSystem, light: text.themeLight, dark: text.themeDark }}
-          />
+        <div className="flex flex-1 flex-col justify-end gap-4 px-5 pt-8 pb-14">
+          <div className="flex items-center gap-4">
+            <LanguageSwitch label={text.languageLabel} current={locale} paths={paths} />
+            <ThemeSwitch
+              label={text.themeLabel}
+              labels={{ light: text.themeLight, dark: text.themeDark }}
+            />
+          </div>
+          <KeyLink
+            size="md"
+            tone="inverse"
+            href={`${sectionsBase}#${SECTION_IDS.contact[locale]}`}
+            className="w-full"
+          >
+            {cta}
+          </KeyLink>
         </div>
       </div>
     </div>

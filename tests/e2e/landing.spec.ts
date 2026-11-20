@@ -36,13 +36,14 @@ for (const { path, lang, other } of ALL_PAGES) {
       });
     }
 
-    test("follows the system theme", async ({ page }) => {
+    test("starts with the system theme", async ({ page }) => {
       const canvas = async () =>
         page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
       await page.emulateMedia({ colorScheme: "dark" });
       await page.goto(path);
       const dark = await canvas();
       await page.emulateMedia({ colorScheme: "light" });
+      await page.reload();
       expect(await canvas()).not.toBe(dark);
     });
   });

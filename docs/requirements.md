@@ -45,13 +45,13 @@ Sitio institucional de Guia, estudio de soluciones digitales (páginas web, apli
 
 - Los proyectos se muestran con su nombre y una captura. Un proyecto con enlace lleva el botón «Ver proyecto» (abre en pestaña nueva); sin enlace se muestra solo el nombre. Audenpass queda sin enlace hasta su lanzamiento (23/10/2026).
 - Contacto: `hola@desarrollosguia.com`, GitHub, y el nombre de cada socio con su WhatsApp y su LinkedIn.
-- Tema: sigue el sistema operativo; el selector (sistema, claro, oscuro) recuerda la elección en el navegador. Sin JavaScript queda el tema del sistema y el selector no se muestra.
+- Tema: arranca según el sistema operativo; el selector (claro y oscuro) recuerda la elección en el navegador. Sin JavaScript queda el tema del sistema y el selector no se muestra.
 - 404: un archivo por idioma (`/404.html` y `/en/404.html`), con `noindex` y fuera del sitemap.
 
 ## 6. Criterios transversales
 
 - Contraste AA, navegación por teclado, foco visible.
-- Imágenes optimizadas. La única JavaScript es el script del tema, servido desde el propio dominio.
+- Imágenes optimizadas. La única JavaScript son los scripts del tema, del menú y de la tecla activa, servidos desde el propio dominio.
 - Rápido en celular (LCP menor a 2,5 s en una conexión 4G).
 - Diseño verificado a 1440 y 390 px, en `/` y `/en/`.
 - Encabezados de seguridad (CSP estricta, HSTS, `nosniff`, `Referrer-Policy`, `Permissions-Policy`).

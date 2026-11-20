@@ -1,11 +1,10 @@
 import { Icon, type IconName } from "./Icon";
-import { keyClassName } from "./Key";
+import { keyClassName, KeyLabel } from "./Key";
 
-export const THEME_CHOICES = ["system", "light", "dark"] as const;
+export const THEME_CHOICES = ["light", "dark"] as const;
 type ThemeChoice = (typeof THEME_CHOICES)[number];
 
 const ICON_BY_CHOICE: Record<ThemeChoice, IconName> = {
-  system: "monitor",
   light: "sun",
   dark: "moon",
 };
@@ -15,7 +14,7 @@ interface ThemeSwitchProps {
   labels: Record<ThemeChoice, string>;
 }
 
-/** Hidden until /theme.js runs: without JavaScript the theme follows the system. */
+/** Hidden until /theme.js runs, since the choice needs script to be applied. */
 export function ThemeSwitch({ label, labels }: ThemeSwitchProps) {
   return (
     <div data-theme-switch hidden>
@@ -29,7 +28,9 @@ export function ThemeSwitch({ label, labels }: ThemeSwitchProps) {
             aria-label={labels[choice]}
             className={keyClassName({ size: "sm", className: "w-key-sm" })}
           >
-            <Icon name={ICON_BY_CHOICE[choice]} className="size-5" />
+            <KeyLabel size="sm" icon>
+              <Icon name={ICON_BY_CHOICE[choice]} className="size-5" />
+            </KeyLabel>
           </button>
         ))}
       </div>

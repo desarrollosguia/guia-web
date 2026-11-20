@@ -9,6 +9,7 @@ import {
 import { getDictionary } from "@/i18n";
 import { ContactChannel } from "./ContactChannel";
 import { KeyLink } from "./Key";
+import { KeyRow } from "./KeyRow";
 import { PageShell } from "./PageShell";
 import { PartnerCard } from "./PartnerCard";
 import { ProjectRow, type ProjectImage } from "./ProjectRow";
@@ -38,6 +39,9 @@ export function HomePage({ locale, images }: HomePageProps) {
               {t.hero.projects}
             </KeyLink>
           </div>
+        </div>
+        <div className="hero-keys">
+          <KeyRow layout="hero" locale={locale} labels={t.nav} base="" />
         </div>
       </section>
 

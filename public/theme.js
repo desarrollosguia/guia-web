@@ -2,50 +2,46 @@
   var STORAGE_KEY = "theme";
   var root = document.documentElement;
 
-  function read() {
+  function stored() {
     try {
-      var stored = localStorage.getItem(STORAGE_KEY);
-      return stored === "light" || stored === "dark" ? stored : "system";
+      var value = localStorage.getItem(STORAGE_KEY);
+      return value === "light" || value === "dark" ? value : null;
     } catch {
-      return "system";
+      return null;
     }
   }
 
-  function apply(choice) {
-    if (choice === "system") {
-      delete root.dataset.theme;
-    } else {
-      root.dataset.theme = choice;
-    }
+  function systemTheme() {
+    return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function remember(theme) {
     try {
-      if (choice === "system") {
-        localStorage.removeItem(STORAGE_KEY);
-      } else {
-        localStorage.setItem(STORAGE_KEY, choice);
-      }
+      localStorage.setItem(STORAGE_KEY, theme);
     } catch {
       /* Without storage the choice only lasts for this visit. */
     }
   }
 
-  var initial = read();
-  if (initial !== "system") root.dataset.theme = initial;
+  root.dataset.theme = stored() || systemTheme();
 
   document.addEventListener("DOMContentLoaded", function () {
     var wrappers = document.querySelectorAll("[data-theme-switch]");
     var buttons = document.querySelectorAll("[data-theme-value]");
-    if (wrappers.length === 0) return;
 
     function mark() {
-      var current = root.dataset.theme || "system";
       buttons.forEach(function (button) {
-        button.setAttribute("aria-pressed", String(button.dataset.themeValue === current));
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.themeValue === root.dataset.theme),
+        );
       });
     }
 
     buttons.forEach(function (button) {
       button.addEventListener("click", function () {
-        apply(button.dataset.themeValue);
+        root.dataset.theme = button.dataset.themeValue;
+        remember(root.dataset.theme);
         mark();
       });
     });

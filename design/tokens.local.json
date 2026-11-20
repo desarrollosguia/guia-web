@@ -66,13 +66,16 @@
     "bar-xs": "0.75rem",
     "bar-thick-lg": "0.25rem",
     "bar-thick-sm": "0.1875rem",
-    "bar-thick-xs": "0.125rem"
+    "bar-thick-xs": "0.125rem",
+    "line-sm": "1rem",
+    "line-thick-sm": "0.125rem"
   },
   "container": {
     "page": "75rem",
     "display": "68.75rem",
     "lead": "40rem",
-    "column": "32.5rem"
+    "column": "32.5rem",
+    "nav-row": "71.25rem"
   },
   "breakpoint": {
     "sm": "40rem",
