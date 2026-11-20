@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   CONTACT_EMAIL,
   FOUNDERS,
@@ -18,10 +19,13 @@ import { SectionHeader } from "./SectionHeader";
 interface HomePageProps {
   locale: Locale;
   images: Record<(typeof PROJECTS)[number]["id"], ProjectImage>;
+  /** The services list: an island passed in as children so only its toggles are hydrated. */
+  children: ReactNode;
 }
 
-export function HomePage({ locale, images }: HomePageProps) {
+export function HomePage({ locale, images, children }: HomePageProps) {
   const t = getDictionary(locale);
+  const servicesId = SECTION_IDS.services[locale];
   const projectsId = SECTION_IDS.projects[locale];
   const contactId = SECTION_IDS.contact[locale];
 
@@ -42,6 +46,31 @@ export function HomePage({ locale, images }: HomePageProps) {
         </div>
         <div className="hero-keys">
           <KeyRow layout="hero" locale={locale} labels={t.nav} base="" />
+        </div>
+      </section>
+
+      <section
+        id={servicesId}
+        aria-labelledby={`${servicesId}-title`}
+        className="flex flex-col gap-6 pt-24 lg:flex-row lg:gap-24 lg:pt-40"
+      >
+        <div className="lg:w-90 lg:shrink-0">
+          <SectionHeader
+            id={`${servicesId}-title`}
+            title={t.services.title}
+            ruleClassName="lg:hidden"
+          />
+        </div>
+        <div className="flex min-w-0 flex-1 flex-col gap-6 lg:gap-12">
+          {children}
+          <KeyLink
+            size="md"
+            tone="inverse"
+            href={`#${contactId}`}
+            className="w-full lg:w-auto lg:self-start"
+          >
+            {t.hero.contact}
+          </KeyLink>
         </div>
       </section>
 
