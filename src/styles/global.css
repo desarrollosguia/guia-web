@@ -24,6 +24,20 @@
 /* A key is selected when it is the current link or a pressed toggle. */
 @custom-variant key-selected (:is(.key[aria-current], .key[aria-pressed="true"]) &);
 
+@keyframes key-tap {
+  40% {
+    transform: translateY(var(--key-press));
+    box-shadow: var(--shadow-key-pressed);
+  }
+}
+
+/* The key dips once when the scroll makes it the current one, like a keystroke. */
+@media (prefers-reduced-motion: no-preference) {
+  .key[aria-current] {
+    animation: key-tap var(--transition-duration-base) var(--ease-standard);
+  }
+}
+
 @utility key-press {
   transform: translateY(var(--key-press));
 }

@@ -31,6 +31,7 @@ for (const { path } of HOME_PAGES) {
           .first()
           .evaluate((el) => getComputedStyle(el).textDecorationLine);
       expect(await underline(projects)).toBe("underline");
+      await expect(projects).toHaveCSS("animation-name", "key-tap");
       expect(await underline(page.locator("main [data-nav-link]").first())).toBe("none");
     });
 

@@ -290,7 +290,7 @@ Tamaños (alto): `lg` 104 px (navegación en el hero, 2 x 2 en móvil), `md` 60 
 | 4   | Línea de «Cómo trabajamos»                        | La barra de relieve avanza (`scaleY` 0 a 1) a lo largo de los pasos                                           | `view()` sobre la lista, `contain 0%` a `contain 100%`                            | Barra completa                                            |
 | 5   | Pasos de «Cómo trabajamos»                        | El paso activo pasa de `content-muted` a `content`                                                            | `view()`, `cover 40%` a `cover 60%`                                               | Todos en `content`                                        |
 
-**Tecla activa por scroll.** La tecla de la sección visible se presiona sola. Se resuelve con un `IntersectionObserver` de unas pocas líneas (menos de 1 KB, servido desde el propio dominio) que agrega `aria-current="true"` al enlace de la sección visible; el estilo presionado lo da el atributo. Sin JavaScript no hay tecla presionada y todo sigue funcionando.
+**Tecla activa por scroll.** La tecla de la sección visible se subraya y, al pasar a ser la actual, se hunde una vez (250 ms, `key-tap`) y vuelve, como una pulsación. Se resuelve con un `IntersectionObserver` de unas pocas líneas (menos de 1 KB, servido desde el propio dominio) que agrega `aria-current="true"` al enlace de la sección visible; el subrayado y la pulsación los da el atributo. Sin JavaScript no hay tecla marcada y todo sigue funcionando.
 
 **Microinteracciones y transiciones**
 
