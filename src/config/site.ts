@@ -36,12 +36,11 @@ export const OG_LOCALE: Record<Locale, string> = { es: "es_AR", en: "en_US" };
 export interface Project {
   id: string;
   /** Optional: a project without a link is shown by name only. */
-  href?: string;
+  href?: string | undefined;
 }
 
 export const PROJECTS = [
-  { id: "audenpass" },
-  { id: "world-cup-predictor", href: "https://wc-match-predictor-frontend.vercel.app/" },
+  { id: "audenpass", href: undefined },
 ] as const satisfies readonly Project[];
 
 export type ProjectId = (typeof PROJECTS)[number]["id"];

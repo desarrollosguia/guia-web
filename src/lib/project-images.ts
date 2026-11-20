@@ -1,15 +1,11 @@
 import { getImage } from "astro:assets";
 import audenpass from "@/assets/projects/audenpass.png";
-import predictor from "@/assets/projects/predictor.png";
 import type { ProjectId } from "@/config/site";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/i18n";
 import type { ProjectImage } from "@/components/ProjectRow";
 
-const SOURCES = { audenpass, "world-cup-predictor": predictor } as const satisfies Record<
-  ProjectId,
-  ImageMetadata
->;
+const SOURCES = { audenpass } as const satisfies Record<ProjectId, ImageMetadata>;
 const SRCSET_WIDTHS = [520, 1040] as const;
 const FORMAT = "webp";
 

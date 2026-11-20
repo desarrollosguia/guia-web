@@ -37,7 +37,7 @@ Sitio institucional de Guia, estudio de soluciones digitales (páginas web, apli
 | Titular             | De la idea a un sistema funcional                                          | From idea to a working system                                          |
 | Bajada              | Diseñamos y desarrollamos a tu medida. Contanos qué necesitás.             | We design and build to fit you. Tell us what you need.                 |
 | Llamados            | Escribinos, Nuestros proyectos                                             | Get in touch, Our projects                                             |
-| Proyectos           | Audenpass, Predictor del Mundial 2026                                      | Audenpass, World Cup 2026 Predictor                                    |
+| Proyectos           | Audenpass                                                                  | Audenpass                                                              |
 | Botón de proyecto   | Ver proyecto                                                               | View project                                                           |
 | Idea de marca (pie) | La F y la J son las teclas guía de tu teclado: este es tu punto de partida | The F and J are your keyboard's home keys: this is your starting point |
 | 404                 | No encontramos esta página. Volver al inicio                               | We couldn't find this page. Back to home                               |

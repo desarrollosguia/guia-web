@@ -2,8 +2,6 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import { ALL_PAGES, HOME_PAGES, NOT_FOUND_PAGES, THEMES, openMenuOnMobile } from "./pages";
 
-const PREDICTOR_URL = "https://wc-match-predictor-frontend.vercel.app/";
-
 for (const { path, lang, other } of ALL_PAGES) {
   test.describe(`page ${path}`, () => {
     test("has the right language and one h1", async ({ page }) => {
@@ -71,11 +69,10 @@ for (const { path } of HOME_PAGES) {
       await expect(page.locator('a[href="mailto:hola@desarrollosguia.com"]').first()).toBeVisible();
     });
 
-    test("shows Audenpass without a link and the predictor with one", async ({ page }) => {
+    test("shows Audenpass without a link", async ({ page }) => {
       await page.goto(path);
       const audenpass = page.getByRole("article").filter({ hasText: "Audenpass" });
       await expect(audenpass.getByRole("link")).toHaveCount(0);
-      await expect(page.locator(`a[href="${PREDICTOR_URL}"]`)).toHaveCount(1);
     });
 
     test("is indexable", async ({ page }) => {

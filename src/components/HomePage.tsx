@@ -53,7 +53,7 @@ export function HomePage({ locale, images }: HomePageProps) {
               key={project.id}
               id={project.id}
               name={t.projects.items[project.id].name}
-              href={"href" in project ? project.href : undefined}
+              href={project.href}
               viewLabel={t.projects.viewProject}
               image={images[project.id]}
             />
