@@ -17,3 +17,4 @@
 | BL-15 | Landing con servicios, cómo trabajamos y nosotros; navegación por teclas (KeyRow y encabezado compacto); páginas de caso y privacidad. Faltan los 404 en claro e inglés en Figma |
 | BL-16 | Teclas con función real: atajos de teclado (por ejemplo 1 a 4 para navegar). Evaluar choques con lectores de pantalla y atajos del navegador |
 | BL-17 | Pie: separar con más aire el énfasis ondulado, como en Figma (hoy el texto va en línea) |
+| BL-18 | Sumar de nuevo el Predictor del Mundial 2026 (fila, caso y capturas) cuando su API esté desplegada |

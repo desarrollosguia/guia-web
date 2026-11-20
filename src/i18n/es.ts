@@ -33,11 +33,6 @@ export const es: Dictionary = {
         imageAlt:
           "Pantalla de inicio de Audenpass con el titular «La entrada a momentos únicos» y un evento destacado",
       },
-      "world-cup-predictor": {
-        name: "Predictor del Mundial 2026",
-        imageAlt:
-          "Pantalla del predictor con las probabilidades, los goles esperados y los resultados más probables de un partido",
-      },
     },
   },
   contact: {

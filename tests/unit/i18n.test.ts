@@ -46,7 +46,7 @@ describe("routes", () => {
 
 describe("project config", () => {
   it("shows a project without link when href is missing", () => {
-    const withoutLink = PROJECTS.filter((project) => !("href" in project));
+    const withoutLink = PROJECTS.filter((project) => !project.href);
     expect(withoutLink.map((project) => project.id)).toEqual(["audenpass"]);
   });
 

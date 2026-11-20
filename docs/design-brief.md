@@ -425,14 +425,13 @@ El texto vigente de la v0 («Soluciones digitales a medida») queda como título
 
 **Cómo trabajamos.** Se escribe con lo que realmente pasa, desde la mirada de quienes trabajan como analistas funcionales: se entiende el problema antes de planificar, diseñar y desarrollar. Pasos: entender (análisis funcional inicial por videollamada, de hasta una hora y sin costo), presupuestar (se acuerdan el alcance, cómo se prueba y el soporte o mantenimiento), diseñar y construir (con entregas parciales posibles, que se presupuestan aparte), probar (sincrónico o asincrónico, según el presupuesto) y publicar (en la fecha pactada). No se muestran plazos. La línea de relieve avanza con el scroll (efectos 4 y 5). Los textos están aprobados.
 
-**Proyectos.** Fila con nombre (`title`), una línea descriptiva, tecla «Ver caso» e imagen a la derecha, separadas por regletas. Sin etiquetas de tecnología en la fila (no le dicen nada a quien contrata) y sin mencionar clientes. Casos iniciales: Audenpass y el predictor del Mundial 2026.
+**Proyectos.** Fila con nombre (`title`), una línea descriptiva, tecla «Ver caso» e imagen a la derecha, separadas por regletas. Sin etiquetas de tecnología en la fila (no le dicen nada a quien contrata) y sin mencionar clientes. Caso inicial: Audenpass. El predictor del Mundial 2026 vuelve cuando su API esté desplegada.
 
 **Caso** (`/proyectos/<caso>`). Plantilla: cabecera compacta con «← Proyectos», nombre (`display` reducido), una línea, una ficha de cuatro datos (año, estado, rol y sitio) y la imagen principal (transición de vista); qué se hizo, ordenado por área (diseño, frontend, backend, infraestructura); pantallas, una grilla de dos columnas en escritorio y de una en móvil con capturas del producto y su nombre debajo (sin capturas, un recuadro «Captura pendiente» que no se publica); el resultado cuando haya cifras comprobables; y el enlace al caso siguiente. Un caso solo se publica cuando el producto está en línea. Los nombres de las personas no son obligatorios. Sin testimonios.
 
-| Caso                       | Línea (propuesta)                                                           | Áreas                                      |
-| -------------------------- | --------------------------------------------------------------------------- | ------------------------------------------ |
-| Audenpass                  | Venta de entradas y control de accesos para eventos.                        | Diseño, frontend, backend, infraestructura |
-| Predictor del Mundial 2026 | Probabilidades, goles esperados y resultados más probables de cada partido. | Modelo y API, frontend                     |
+| Caso      | Línea (propuesta)                                    | Áreas                                      |
+| --------- | ---------------------------------------------------- | ------------------------------------------ |
+| Audenpass | Venta de entradas y control de accesos para eventos. | Diseño, frontend, backend, infraestructura |
 
 **Contacto.** Objetivo: que escribir sea fácil. Formulario (nombre, mail, empresa opcional, tipo de proyecto, mensaje, consentimiento y Turnstile) y los canales alternativos. Sin campo de presupuesto. Estados: enviando, enviado y error.
 

@@ -33,11 +33,6 @@ export const en: Dictionary = {
         imageAlt:
           "Audenpass home screen with the headline «The ticket to unique moments» and a featured event",
       },
-      "world-cup-predictor": {
-        name: "World Cup 2026 Predictor",
-        imageAlt:
-          "Predictor screen with the win probabilities, expected goals and most likely scorelines of a match",
-      },
     },
   },
   contact: {
