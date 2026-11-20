@@ -21,7 +21,7 @@ export function PageShell({ locale, route, children }: PageShellProps) {
   >;
 
   return (
-    <div className="bg-canvas text-content font-sans flex min-h-screen flex-col px-5">
+    <div className="hero-scope bg-canvas text-content font-sans flex min-h-screen flex-col px-5">
       <SkipLink label={t.skipLink} />
       <Header
         text={t.header}

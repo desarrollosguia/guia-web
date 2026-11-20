@@ -37,12 +37,13 @@ for (const { path } of HOME_PAGES) {
       expect(outline).toBe("solid");
     });
 
-    test("compact header appears with the scroll on desktop", async ({ page, viewport }) => {
+    test("compact header appears only after the hero keys", async ({ page, viewport }) => {
       test.skip((viewport?.width ?? 0) <= MOBILE_MAX_WIDTH, "The compact header is desktop only");
       await page.goto(path);
       const compact = page.locator("header [data-nav-link]").first();
+      await page.mouse.wheel(0, 200);
       await expect(compact).toBeHidden();
-      await page.mouse.wheel(0, 600);
+      await page.evaluate(() => document.querySelector("#proyectos, #work")?.scrollIntoView());
       await expect(compact).toBeVisible();
     });
   });

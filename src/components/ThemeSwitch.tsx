@@ -1,5 +1,5 @@
 import { Icon, type IconName } from "./Icon";
-import { keyClassName } from "./Key";
+import { keyClassName, KeyLabel } from "./Key";
 
 export const THEME_CHOICES = ["light", "dark"] as const;
 type ThemeChoice = (typeof THEME_CHOICES)[number];
@@ -28,7 +28,9 @@ export function ThemeSwitch({ label, labels }: ThemeSwitchProps) {
             aria-label={labels[choice]}
             className={keyClassName({ size: "sm", className: "w-key-sm" })}
           >
-            <Icon name={ICON_BY_CHOICE[choice]} className="size-5" />
+            <KeyLabel size="sm">
+              <Icon name={ICON_BY_CHOICE[choice]} className="size-5" />
+            </KeyLabel>
           </button>
         ))}
       </div>

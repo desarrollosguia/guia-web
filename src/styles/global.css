@@ -90,6 +90,16 @@
 
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
+    /* The hero keys give way to the header ones: both share the timeline of the hero keys. */
+    .hero-scope {
+      timeline-scope: --hero-keys;
+    }
+    .hero-keys {
+      view-timeline: --hero-keys;
+      animation: hero-keys-out linear both;
+      animation-timeline: --hero-keys;
+      animation-range: exit 0% exit 60%;
+    }
     @media (width >= theme(--breakpoint-md)) {
       .header-row,
       .header-bar,
@@ -98,8 +108,17 @@
       .header-cta {
         animation-timing-function: linear;
         animation-fill-mode: both;
+      }
+      .header-row,
+      .header-bar {
         animation-timeline: scroll(root);
-        animation-range: 0 20rem;
+        animation-range: 0 6rem;
+      }
+      .header-keys,
+      .header-theme,
+      .header-cta {
+        animation-timeline: --hero-keys;
+        animation-range: exit 0% exit 60%;
       }
       .header-row {
         animation-name: header-row-up;
@@ -116,11 +135,6 @@
       .header-cta {
         animation-name: header-cta-in;
       }
-    }
-    .hero-keys {
-      animation: hero-keys-out linear both;
-      animation-timeline: view();
-      animation-range: exit 0% exit 50%;
     }
   }
 }

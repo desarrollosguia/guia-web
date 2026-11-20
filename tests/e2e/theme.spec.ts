@@ -16,6 +16,15 @@ for (const { path } of HOME_PAGES) {
       });
     }
 
+    test("shows a line under the selected theme", async ({ page }) => {
+      await page.emulateMedia({ colorScheme: "dark" });
+      await page.goto(path);
+      await openMenuOnMobile(page);
+      const selected = page.locator('[data-theme-value="dark"]:visible');
+      await expect(selected.locator("span")).toBeVisible();
+      await expect(page.locator('[data-theme-value="light"]:visible span')).toBeHidden();
+    });
+
     test("overrides the system theme and remembers the choice", async ({ page }) => {
       await page.emulateMedia({ colorScheme: "dark" });
       await page.goto(path);
