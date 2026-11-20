@@ -425,7 +425,7 @@ El texto vigente de la v0 («Soluciones digitales a medida») queda como título
 
 **Cómo trabajamos.** Se escribe con lo que realmente pasa, desde la mirada de quienes trabajan como analistas funcionales: se entiende el problema antes de planificar, diseñar y desarrollar. Pasos: entender (análisis funcional inicial por videollamada, de hasta una hora y sin costo), presupuestar (se acuerdan el alcance, cómo se prueba y el soporte o mantenimiento), diseñar y construir (con entregas parciales posibles, que se presupuestan aparte), probar (sincrónico o asincrónico, según el presupuesto) y publicar (en la fecha pactada). No se muestran plazos. La línea de relieve avanza con el scroll (efectos 4 y 5). Los textos están aprobados.
 
-**Proyectos.** Fila con nombre (`title`), una línea descriptiva, tecla «Ver caso» e imagen a la derecha, separadas por regletas. Sin etiquetas de tecnología en la fila (no le dicen nada a quien contrata) y sin mencionar clientes. Caso inicial: Audenpass. El predictor del Mundial 2026 vuelve cuando su API esté desplegada.
+**Proyectos.** Fila con nombre (`title`), una línea descriptiva, tecla «Ver caso» e imagen a la derecha, separadas por regletas. Sin etiquetas de tecnología en la fila (no le dicen nada a quien contrata) y sin mencionar clientes. Caso inicial: Audenpass (sin cifras, porque la plataforma es del cliente y esos datos son suyos; sin detalles de seguridad ni de la Fase 2). El predictor del Mundial 2026 vuelve cuando su API esté desplegada.
 
 **Caso** (`/proyectos/<caso>`). Plantilla: cabecera compacta con «← Proyectos», nombre (`display` reducido), una línea, una ficha de cuatro datos (año, estado, rol y sitio) y la imagen principal (transición de vista); qué se hizo, ordenado por área (diseño, frontend, backend, infraestructura); pantallas, una grilla de dos columnas en escritorio y de una en móvil con capturas del producto y su nombre debajo (sin capturas, un recuadro «Captura pendiente» que no se publica); el resultado cuando haya cifras comprobables; y el enlace al caso siguiente. Un caso solo se publica cuando el producto está en línea. Los nombres de las personas no son obligatorios. Sin testimonios.
 
@@ -433,9 +433,9 @@ El texto vigente de la v0 («Soluciones digitales a medida») queda como título
 | --------- | ---------------------------------------------------- | ------------------------------------------ |
 | Audenpass | Venta de entradas y control de accesos para eventos. | Diseño, frontend, backend, infraestructura |
 
-**Contacto.** Objetivo: que escribir sea fácil. Formulario (nombre, mail, empresa opcional, tipo de proyecto, mensaje, consentimiento y Turnstile) y los canales alternativos. Sin campo de presupuesto. Estados: enviando, enviado y error.
+**Contacto.** Objetivo: que escribir sea fácil. Formulario (nombre, mail, empresa opcional, tipo de proyecto, mensaje, consentimiento y Turnstile). El tipo de proyecto es un selector con el marcador «Elegí una opción» y las opciones Web, Aplicación, Bot, Sistema a medida, Integración y Otro y los canales alternativos. Sin campo de presupuesto. Estados: enviando, enviado y error.
 
-**Privacidad.** Contenido mínimo: quién es responsable, qué datos se piden (nombre, mail, empresa y mensaje), para qué se usan, qué proveedores participan (Cloudflare), cuánto se conservan y cómo ejercer los derechos. El texto legal lo valida alguien con competencia antes de publicarlo.
+**Privacidad.** Contenido mínimo: quién es responsable, qué datos se piden (nombre, mail, empresa, tipo de proyecto y mensaje), para qué se usan, qué proveedores participan (Cloudflare y el servicio de correo), cuánto se conservan (hasta 2 años después del último contacto) y cómo ejercer los derechos, con el reclamo ante la Agencia de Acceso a la Información Pública (Ley 25.326). No se publican domicilio ni CUIT. El sitio no usa cookies. El texto legal lo valida alguien con competencia antes de publicarlo.
 
 **404.** Mensaje breve, enlace al inicio y el selector de idioma.
 
