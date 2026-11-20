@@ -25,17 +25,18 @@ const BARS: Record<KeySize, string> = {
   xs: "h-bar-thick-xs w-bar-xs",
 };
 
-/** The relief bar gives way to the line of a selected key (current link or pressed toggle). */
+/** The relief bar gives way to the underline of a selected key (current link or pressed toggle). */
 const BAR_STATE = "key-selected:hidden";
 
-const LINES: Record<KeySize, string> = {
-  lg: "h-line-thick-lg w-line-lg",
+const SELECTED_LABEL: Record<KeySize, string> = {
+  lg: "key-selected:underline decoration-content decoration-3 underline-offset-8",
   md: "",
-  sm: "h-line-thick-sm w-line-sm",
+  sm: "key-selected:underline decoration-content decoration-2 underline-offset-4",
   xs: "",
 };
 
-const LINE_STATE = "hidden key-selected:block";
+/** Keys with an icon have no text to underline, so they get a short line instead. */
+const ICON_LINE = "bg-content rounded-full h-line-thick-sm w-line-sm hidden key-selected:block";
 
 interface KeyStyleOptions {
   size: KeySize;
@@ -49,22 +50,18 @@ export const keyClassName = ({ size, tone = "surface", className }: KeyStyleOpti
 interface KeyLabelProps {
   size: KeySize;
   relief?: boolean | undefined;
+  icon?: boolean | undefined;
   children: ReactNode;
 }
 
-export function KeyLabel({ size, relief = false, children }: KeyLabelProps) {
+export function KeyLabel({ size, relief = false, icon = false, children }: KeyLabelProps) {
   return (
     <>
-      {children}
+      {icon ? children : <span className={SELECTED_LABEL[size]}>{children}</span>}
       {relief && BARS[size] && (
         <span aria-hidden="true" className={`bg-accent rounded-full ${BARS[size]} ${BAR_STATE}`} />
       )}
-      {LINES[size] && (
-        <span
-          aria-hidden="true"
-          className={`bg-content rounded-full ${LINES[size]} ${LINE_STATE}`}
-        />
-      )}
+      {icon && <span aria-hidden="true" className={ICON_LINE} />}
     </>
   );
 }

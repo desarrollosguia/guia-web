@@ -25,7 +25,13 @@ for (const { path } of HOME_PAGES) {
       await page.locator(target).scrollIntoViewIfNeeded();
       await page.evaluate((id) => document.querySelector(id)?.scrollIntoView(), target);
       await expect(projects).toHaveAttribute("aria-current", "true");
-      await expect(projects.locator("span:visible")).toHaveCount(1);
+      const underline = (key: typeof projects) =>
+        key
+          .locator("span")
+          .first()
+          .evaluate((el) => getComputedStyle(el).textDecorationLine);
+      expect(await underline(projects)).toBe("underline");
+      expect(await underline(page.locator("main [data-nav-link]").first())).toBe("none");
     });
 
     test("is reachable with the keyboard and shows the focus ring", async ({ page }) => {

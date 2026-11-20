@@ -28,7 +28,7 @@ export function ThemeSwitch({ label, labels }: ThemeSwitchProps) {
             aria-label={labels[choice]}
             className={keyClassName({ size: "sm", className: "w-key-sm" })}
           >
-            <KeyLabel size="sm">
+            <KeyLabel size="sm" icon>
               <Icon name={ICON_BY_CHOICE[choice]} className="size-5" />
             </KeyLabel>
           </button>

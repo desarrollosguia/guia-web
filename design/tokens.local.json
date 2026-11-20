@@ -68,9 +68,7 @@
     "bar-thick-sm": "0.1875rem",
     "bar-thick-xs": "0.125rem",
     "line-sm": "1rem",
-    "line-lg": "1.5rem",
-    "line-thick-sm": "0.125rem",
-    "line-thick-lg": "0.1875rem"
+    "line-thick-sm": "0.125rem"
   },
   "container": {
     "page": "75rem",
