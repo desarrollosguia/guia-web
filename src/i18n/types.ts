@@ -1,4 +1,4 @@
-import type { ProjectId } from "@/config/site";
+import type { NavSection, ProjectId } from "@/config/site";
 
 export interface Dictionary {
   meta: { title: string; description: string };
@@ -7,13 +7,13 @@ export interface Dictionary {
     homeLabel: string;
     languageLabel: string;
     themeLabel: string;
-    themeSystem: string;
     themeLight: string;
     themeDark: string;
     menuOpen: string;
     menuClose: string;
     menuLabel: string;
   };
+  nav: { label: string } & Record<NavSection, string>;
   hero: { title: string; lead: string; contact: string; projects: string };
   projects: {
     title: string;

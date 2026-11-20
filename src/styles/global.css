@@ -21,6 +21,106 @@
   text-underline-offset: var(--emphasis-offset);
 }
 
+/* A key is selected when it is the current link or a pressed toggle. */
+@custom-variant key-selected (:is(.key[aria-current], .key[aria-pressed="true"]) &);
+
 @utility key-press {
   transform: translateY(var(--key-press));
+}
+
+/*
+ * Scroll effects of the header and the hero keys. Without support for scroll timelines, or with
+ * reduced motion, the header stays in its compact state and the hero keys stay still.
+ */
+.header-row,
+.header-bar {
+  transition-duration: var(--transition-duration-base);
+}
+
+@media (width >= theme(--breakpoint-md)) {
+  .header-row {
+    transform: translateY(calc(var(--spacing) * -3));
+  }
+}
+
+@keyframes header-row-up {
+  from {
+    transform: none;
+  }
+}
+
+@keyframes header-bar-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes header-keys-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(calc(var(--spacing) * -4));
+  }
+}
+
+@keyframes header-theme-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes header-cta-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes hero-keys-out {
+  to {
+    opacity: 0;
+    transform: translateY(calc(var(--spacing) * -6));
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @media (width >= theme(--breakpoint-md)) {
+      .header-row,
+      .header-bar,
+      .header-keys,
+      .header-theme,
+      .header-cta {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: scroll(root);
+        animation-range: 0 20rem;
+      }
+      .header-row {
+        animation-name: header-row-up;
+      }
+      .header-bar {
+        animation-name: header-bar-in;
+      }
+      .header-keys {
+        animation-name: header-keys-in;
+      }
+      .header-theme {
+        animation-name: header-theme-out;
+      }
+      .header-cta {
+        animation-name: header-cta-in;
+      }
+    }
+    .hero-keys {
+      animation: hero-keys-out linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 50%;
+    }
+  }
 }

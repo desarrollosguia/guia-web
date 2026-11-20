@@ -25,9 +25,11 @@ export function PageShell({ locale, route, children }: PageShellProps) {
       <SkipLink label={t.skipLink} />
       <Header
         text={t.header}
-        sections={{ projects: t.projects.title, contact: t.contact.title }}
+        nav={t.nav}
+        cta={t.hero.contact}
         locale={locale}
         homePath={routePath("home", locale)}
+        sectionsBase={route === "home" ? "" : routePath("home", locale)}
         paths={paths}
       />
       <main id="main" className="mx-auto flex w-full max-w-page flex-1 flex-col">

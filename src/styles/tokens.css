@@ -28,10 +28,15 @@
   --spacing-bar-thick-lg: 0.25rem;
   --spacing-bar-thick-sm: 0.1875rem;
   --spacing-bar-thick-xs: 0.125rem;
+  --spacing-line-sm: 1rem;
+  --spacing-line-lg: 1.5rem;
+  --spacing-line-thick-sm: 0.125rem;
+  --spacing-line-thick-lg: 0.1875rem;
   --container-page: 75rem;
   --container-display: 68.75rem;
   --container-lead: 40rem;
   --container-column: 32.5rem;
+  --container-nav-row: 71.25rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;

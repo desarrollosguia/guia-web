@@ -46,9 +46,16 @@ export const PROJECTS = [
 export type ProjectId = (typeof PROJECTS)[number]["id"];
 
 export const SECTION_IDS = {
+  services: { es: "servicios", en: "services" },
   projects: { es: "proyectos", en: "work" },
+  process: { es: "como-trabajamos", en: "how-we-work" },
+  about: { es: "nosotros", en: "about" },
   contact: { es: "contacto", en: "contact" },
 } as const satisfies Record<string, Record<Locale, string>>;
+
+/** The sections the keys of the navigation lead to, in order. */
+export const NAV_SECTIONS = ["services", "projects", "process", "about"] as const;
+export type NavSection = (typeof NAV_SECTIONS)[number];
 
 export const ROUTES = {
   home: { es: "/", en: "/en/" },

@@ -4,11 +4,10 @@ export type KeySize = "lg" | "md" | "sm" | "xs";
 export type KeyTone = "surface" | "inverse";
 
 const BASE =
-  "relative inline-flex flex-col items-center justify-center rounded-md border shadow-key transition duration-fast ease-standard active:key-press active:shadow-key-pressed aria-disabled:opacity-40 aria-disabled:shadow-none aria-disabled:pointer-events-none";
+  "key relative inline-flex flex-col items-center justify-center rounded-md border shadow-key transition duration-fast ease-standard active:key-press active:shadow-key-pressed aria-disabled:opacity-40 aria-disabled:shadow-none aria-disabled:pointer-events-none";
 
 const TONES: Record<KeyTone, string> = {
-  surface:
-    "bg-surface text-content border-border-strong hover:bg-surface-raised aria-[current=page]:bg-surface-raised aria-pressed:bg-surface-raised",
+  surface: "bg-surface text-content border-border-strong hover:bg-surface-raised",
   inverse: "bg-inverse text-on-inverse border-inverse hover:bg-content-muted",
 };
 
@@ -26,9 +25,17 @@ const BARS: Record<KeySize, string> = {
   xs: "h-bar-thick-xs w-bar-xs",
 };
 
-/** The pressed look (shorter edge, shifted down) also applies to the current page or toggle. */
-const PRESSED =
-  "aria-[current=page]:key-press aria-[current=page]:shadow-key-pressed aria-pressed:key-press aria-pressed:shadow-key-pressed";
+/** The relief bar gives way to the line of a selected key (current link or pressed toggle). */
+const BAR_STATE = "key-selected:hidden";
+
+const LINES: Record<KeySize, string> = {
+  lg: "h-line-thick-lg w-line-lg",
+  md: "",
+  sm: "h-line-thick-sm w-line-sm",
+  xs: "",
+};
+
+const LINE_STATE = "hidden key-selected:block";
 
 interface KeyStyleOptions {
   size: KeySize;
@@ -37,7 +44,7 @@ interface KeyStyleOptions {
 }
 
 export const keyClassName = ({ size, tone = "surface", className }: KeyStyleOptions): string =>
-  [BASE, TONES[tone], SIZES[size], PRESSED, className].filter(Boolean).join(" ");
+  [BASE, TONES[tone], SIZES[size], className].filter(Boolean).join(" ");
 
 interface KeyLabelProps {
   size: KeySize;
@@ -50,7 +57,13 @@ export function KeyLabel({ size, relief = false, children }: KeyLabelProps) {
     <>
       {children}
       {relief && BARS[size] && (
-        <span aria-hidden="true" className={`bg-accent rounded-full ${BARS[size]}`} />
+        <span aria-hidden="true" className={`bg-accent rounded-full ${BARS[size]} ${BAR_STATE}`} />
+      )}
+      {LINES[size] && (
+        <span
+          aria-hidden="true"
+          className={`bg-content rounded-full ${LINES[size]} ${LINE_STATE}`}
+        />
       )}
     </>
   );
