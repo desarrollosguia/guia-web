@@ -30,6 +30,42 @@ export const es: Dictionary = {
     contact: "Escribinos",
     projects: "Nuestros proyectos",
   },
+  services: {
+    title: "Servicios",
+    showIncluded: "Qué incluye",
+    hideIncluded: "Ocultar",
+    items: [
+      {
+        name: "Webs",
+        line: "Para que tu negocio se encuentre online y quien llega sepa qué hacer.",
+        included: ["Diseño de la interfaz", "Desarrollo del sitio", "Publicación"],
+      },
+      {
+        name: "Aplicaciones",
+        line: "Para convertir una idea o un proceso en una aplicación que tu equipo o tus clientes puedan usar.",
+        included: ["Diseño de la experiencia", "Desarrollo", "Pruebas"],
+      },
+      {
+        name: "Bots",
+        line: "Para atender consultas y gestionar turnos sin contestar todo a mano.",
+        included: ["Definición de las conversaciones", "Desarrollo del bot", "Pruebas"],
+      },
+      {
+        name: "Sistemas a medida",
+        line: "Para ordenar lo que hoy se hace en planillas y mensajes, con un sistema pensado para tu forma de trabajar.",
+        included: ["Modelo de datos", "Desarrollo", "Integración con lo que ya usás"],
+      },
+      {
+        name: "Integraciones y automatización",
+        line: "Para que los sistemas que ya usás se hablen entre sí y se terminen las tareas repetidas.",
+        included: [
+          "Análisis de los sistemas involucrados",
+          "Conexión por APIs",
+          "Pruebas de las integraciones",
+        ],
+      },
+    ],
+  },
   projects: {
     title: "Proyectos",
     viewProject: "Ver proyecto",

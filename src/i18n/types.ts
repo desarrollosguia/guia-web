@@ -15,6 +15,17 @@ export interface Dictionary {
   };
   nav: { label: string } & Record<NavSection, string>;
   hero: { title: string; lead: string; contact: string; projects: string };
+  services: {
+    title: string;
+    showIncluded: string;
+    hideIncluded: string;
+    items: readonly {
+      name: string;
+      line: string;
+      /** The three things a service includes. */
+      included: readonly [string, string, string];
+    }[];
+  };
   projects: {
     title: string;
     viewProject: string;

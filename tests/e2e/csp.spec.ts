@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { expect, test } from "@playwright/test";
@@ -43,11 +44,19 @@ for (const { path } of ALL_PAGES) {
   });
 }
 
-test("built pages have no inline script, style element or style attribute", () => {
+const hashOf = (content: string): string =>
+  `'sha256-${createHash("sha256").update(content).digest("base64")}'`;
+
+test("built pages only have inline scripts and styles the policy allows by hash", () => {
   for (const file of htmlFiles(DIST)) {
     const html = readFileSync(file, "utf8");
-    expect(html, file).not.toMatch(/<script(?![^>]*\bsrc=)[^>]*>/);
-    expect(html, file).not.toMatch(/<style[\s>]/);
     expect(html, file).not.toMatch(/\sstyle="/);
+    const inline = [
+      ...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g),
+      ...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g),
+    ];
+    for (const [, content = ""] of inline) {
+      expect(policy, `${file}: ${hashOf(content)}`).toContain(hashOf(content));
+    }
   }
 });

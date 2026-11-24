@@ -1,5 +1,6 @@
 ---
 import { HomePage } from "@/components/HomePage";
+import { ServicesList } from "@/components/ServicesList";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/i18n";
 import { getProjectImages } from "@/lib/project-images";
@@ -10,5 +11,7 @@ const images = await getProjectImages(locale);
 ---
 
 <BaseLayout locale={locale} route="home" title={t.meta.title} description={t.meta.description}>
-  <HomePage locale={locale} images={images} />
+  <HomePage locale={locale} images={images}>
+    <ServicesList text={t.services} client:visible />
+  </HomePage>
 </BaseLayout>
