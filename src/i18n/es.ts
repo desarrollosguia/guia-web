@@ -66,6 +66,33 @@ export const es: Dictionary = {
       },
     ],
   },
+  process: {
+    title: "Cómo trabajamos",
+    intro:
+      "Trabajamos como analistas funcionales: entendemos el problema antes de planificar, diseñar y desarrollar.",
+    steps: [
+      {
+        name: "Entender",
+        line: "Hacemos un análisis funcional inicial por videollamada, de hasta una hora y sin costo, para entender qué necesitás antes de proponer nada.",
+      },
+      {
+        name: "Presupuestar",
+        line: "Con lo que aprendimos armamos un presupuesto. Ahí se acuerdan el alcance, cómo se prueba y el soporte o mantenimiento.",
+      },
+      {
+        name: "Diseñar y construir",
+        line: "Diseñamos y desarrollamos la solución. Si hace falta, podemos hacer entregas parciales, que se presupuestan aparte.",
+      },
+      {
+        name: "Probar",
+        line: "Probamos lo construido de forma sincrónica o asincrónica, según lo que se definió en el presupuesto.",
+      },
+      {
+        name: "Publicar",
+        line: "Publicamos en la fecha pactada. El soporte o mantenimiento sigue lo que se acordó en el presupuesto.",
+      },
+    ],
+  },
   projects: {
     title: "Proyectos",
     viewProject: "Ver proyecto",

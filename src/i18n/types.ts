@@ -26,6 +26,11 @@ export interface Dictionary {
       included: readonly [string, string, string];
     }[];
   };
+  process: {
+    title: string;
+    intro: string;
+    steps: readonly { name: string; line: string }[];
+  };
   projects: {
     title: string;
     viewProject: string;

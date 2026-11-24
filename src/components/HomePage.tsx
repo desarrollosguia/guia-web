@@ -13,6 +13,7 @@ import { KeyLink } from "./Key";
 import { KeyRow } from "./KeyRow";
 import { PageShell } from "./PageShell";
 import { PartnerCard } from "./PartnerCard";
+import { ProcessSteps } from "./ProcessSteps";
 import { ProjectRow, type ProjectImage } from "./ProjectRow";
 import { SectionHeader } from "./SectionHeader";
 
@@ -27,6 +28,7 @@ export function HomePage({ locale, images, children }: HomePageProps) {
   const t = getDictionary(locale);
   const servicesId = SECTION_IDS.services[locale];
   const projectsId = SECTION_IDS.projects[locale];
+  const processId = SECTION_IDS.process[locale];
   const contactId = SECTION_IDS.contact[locale];
 
   return (
@@ -92,6 +94,22 @@ export function HomePage({ locale, images, children }: HomePageProps) {
             />
           ))}
         </div>
+      </section>
+
+      <section
+        id={processId}
+        aria-labelledby={`${processId}-title`}
+        className="flex flex-col gap-6 pt-24 lg:flex-row lg:items-start lg:gap-24 lg:pt-40"
+      >
+        <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:w-90 lg:shrink-0">
+          <SectionHeader
+            id={`${processId}-title`}
+            title={t.process.title}
+            ruleClassName="lg:hidden"
+          />
+          <p className="type-lead text-content-muted">{t.process.intro}</p>
+        </div>
+        <ProcessSteps steps={t.process.steps} />
       </section>
 
       <section

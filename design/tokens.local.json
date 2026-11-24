@@ -75,6 +75,7 @@
     "display": "68.75rem",
     "lead": "40rem",
     "column": "32.5rem",
+    "step": "30rem",
     "nav-row": "71.25rem"
   },
   "breakpoint": {

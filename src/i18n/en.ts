@@ -62,6 +62,33 @@ export const en: Dictionary = {
       },
     ],
   },
+  process: {
+    title: "How we work",
+    intro:
+      "We work as functional analysts: we understand the problem before planning, designing and building.",
+    steps: [
+      {
+        name: "Understand",
+        line: "We start with a functional analysis over a video call, up to an hour and free of charge, to understand what you need before proposing anything.",
+      },
+      {
+        name: "Quote",
+        line: "With what we learned we put together a quote. That's where the scope, how it will be tested and the support or maintenance are agreed.",
+      },
+      {
+        name: "Design and build",
+        line: "We design and develop the solution. If needed, we can deliver in parts, which are quoted separately.",
+      },
+      {
+        name: "Test",
+        line: "We test what was built, synchronously or asynchronously, depending on what was defined in the quote.",
+      },
+      {
+        name: "Launch",
+        line: "We launch on the agreed date. Support or maintenance follows what was agreed in the quote.",
+      },
+    ],
+  },
   projects: {
     title: "Projects",
     viewProject: "View project",

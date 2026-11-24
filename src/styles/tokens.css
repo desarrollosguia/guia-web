@@ -34,6 +34,7 @@
   --container-display: 68.75rem;
   --container-lead: 40rem;
   --container-column: 32.5rem;
+  --container-step: 30rem;
   --container-nav-row: 71.25rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;

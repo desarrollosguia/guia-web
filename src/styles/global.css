@@ -152,3 +152,70 @@
     }
   }
 }
+
+/*
+ * Scroll effects of "Cómo trabajamos". Without support for view timelines, or with reduced motion,
+ * the line is full and every step is lit. The line uses the cover range because the contain range
+ * is reversed or only a few pixels long when the list is about as tall as the screen.
+ */
+@keyframes process-advance {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes process-number-lit {
+  from {
+    color: var(--color-content-subtle);
+  }
+}
+
+@keyframes process-name-lit {
+  from {
+    color: var(--color-content-muted);
+  }
+}
+
+@keyframes process-text-lit {
+  from {
+    color: var(--color-content-subtle);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .process {
+      view-timeline: --process;
+    }
+    .process-step {
+      view-timeline: --process-step;
+    }
+    .process-line,
+    .process-number,
+    .process-name,
+    .process-text {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+    }
+    .process-line {
+      animation-name: process-advance;
+      animation-timeline: --process;
+      animation-range: cover 30% cover 70%;
+    }
+    .process-number,
+    .process-name,
+    .process-text {
+      animation-timeline: --process-step;
+      animation-range: cover 40% cover 60%;
+    }
+    .process-number {
+      animation-name: process-number-lit;
+    }
+    .process-name {
+      animation-name: process-name-lit;
+    }
+    .process-text {
+      animation-name: process-text-lit;
+    }
+  }
+}
